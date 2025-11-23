@@ -1,6 +1,14 @@
-This code is developed using QUASAR framework: https://quasar.docs.cern.ch/quasar.html.
-It creates a OPC-UA server which can then connect to a OPC-UA client such as WinCC-OA. 
+📝 Description
 
-This code establishes a connection with AMACv2 chip that is located on each silicon module. The code to establish the connection with the chip is in Device/src/ folder.
+This code is developed using the QUASAR framework:
+🔗 https://quasar.docs.cern.ch/quasar.html
 
-The code can't be run on its own, and needs to communicate with a software (proprietary code belonging to the ATLAS collaboration) specifically designed to convert the optical signals from AMACv2 chip to digital data that can be then interpreted by the above code.  
+It implements an OPC-UA server that can interface with an OPC-UA client such as WinCC-OA.
+
+The purpose of this code is to establish communication with the AMACv2 chip, located on each silicon strip module of the ATLAS Inner Tracker upgrade.
+The logic for interacting with the AMACv2 chip is implemented in the Device/src/ directory.
+
+⚠️ Note:
+This code cannot run as a standalone application.
+It relies on a separate proprietary ATLAS software layer, which handles the conversion of optical signals from the AMACv2 chip into digital data.
+Only after this conversion can the data be interpreted by the modules implemented in this repository.
