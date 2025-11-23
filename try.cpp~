@@ -1,0 +1,11 @@
+#include <cstddef>
+#include <iostream>
+#include <string.h>
+#include <cstring>
+#include <bitset>
+#include <sstream>
+#include <cmath>
+#include <fstream>
+#include <vector>
+
+using namespace std;

@@ -1,0 +1,1536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<d:design projectShortName="" xmlns:d="http://cern.ch/quasar/Design" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cern.ch/quasar/Design Design.xsd ">
+  <d:class name="AMAC">
+  	<d:devicelogic></d:devicelogic>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Boolean" name="read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Boolean" name="write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="channel_num" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Boolean" name="setID_bond" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="comm_ID" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="FuseID_val" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Boolean" name="setID_Fuse"
+  		nullPolicy="nullForbidden" addressSpaceWrite="regular"
+  		initialStatus="OpcUa_Good" initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Bond_value" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus" 
+			 dataType="OpcUa_Boolean" name="Write_configuration" nullPolicy="nullForbidden" addressSpaceWrite="regular" initialStatus="OpcUa_Good" initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus" 
+			 dataType="OpcUa_Boolean" name="enableDCDC" nullPolicy="nullForbidden" addressSpaceWrite="regular" initialStatus="OpcUa_Good" initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus" 
+			 dataType="OpcUa_Boolean" name="DoOffset" nullPolicy="nullForbidden" addressSpaceWrite="regular" initialStatus="OpcUa_Good" initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus" 
+			 dataType="OpcUa_Boolean" name="HVCurrent" nullPolicy="nullForbidden" addressSpaceWrite="regular" initialStatus="OpcUa_Good" initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus" 
+			 dataType="OpcUa_Boolean" name="EnableNTC" nullPolicy="nullForbidden" addressSpaceWrite="regular" initialStatus="OpcUa_Good" initialValue="0">
+  	</d:cachevariable>
+	<d:cachevariable initializeWith="valueAndStatus" 
+			 dataType="OpcUa_Int16" name="MUX_val" nullPolicy="nullForbidden" addressSpaceWrite="regular" initialStatus="OpcUa_Good" initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus" 
+			 dataType="OpcUa_Int16" name="NTC" nullPolicy="nullForbidden" addressSpaceWrite="regular" initialStatus="OpcUa_Good" initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus" 
+			 dataType="OpcUa_Float" name="HVCurrent_value" nullPolicy="nullForbidden" addressSpaceWrite="forbidden" initialStatus="OpcUa_Good" initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus" 
+			 dataType="OpcUa_Float" name="NTC_value" nullPolicy="nullForbidden" addressSpaceWrite="forbidden" initialStatus="OpcUa_Good" initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int64" name="Reg000" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg001" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg002" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg003" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg004" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg005" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg006" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg007" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int64" name="Reg010" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg010_Ch0" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg010_Ch1" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg010_Ch2" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg010_Ae" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int64" name="Reg011" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg011_Ch3" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg011_Ch4" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg011_Ch5" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg011_Ae" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int64" name="Reg012" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg012_Ch6" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg012_Ch7" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg012_Ch8" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg012_Ae" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int64" name="Reg013" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg013_Ch09" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg013_Ch10" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg013_Ch11" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg013_Ae" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int64" name="Reg014" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg014_Ch12" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg014_Ch13" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg014_Ch14" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg014_Ae" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int64" name="Reg015" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg015_Ch15" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int16" name="Reg015_Ae" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg024" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg025" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg026" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg027" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg031" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg032" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg033" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg034" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg040_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg040_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1717960704">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg041_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg041_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1717960704">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg042_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg042_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg043_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg043_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg044_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg044_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg045_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg045_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg046_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg046_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg047_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg047_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg048_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg048_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg049_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg049_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg050_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg050_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="256">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg051_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg051_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="256">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg052_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg052_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="8388736">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg053_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg053_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg054_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg054_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg055_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg055_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="13">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg056_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg056_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1028">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg057_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg057_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="67372036">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg058_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg058_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="4200448">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg060_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg060_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="4096">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg061_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg061_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="4096">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg062_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg062_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="4096">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg063_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg063_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="4096">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg064_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg064_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="4096">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg065_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg065_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="4096">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg070_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg070_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg071_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg071_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg072_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg072_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg073_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg073_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg074_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg074_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg075_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg075_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg076_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg076_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg077_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg077_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg078_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg078_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg079_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg079_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg080_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg080_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg081_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg081_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg082_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg082_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg083_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg083_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg084_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg084_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg085_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg085_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg086_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg086_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg087_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg087_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg090_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg090_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg091_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg091_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg092_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg092_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg093_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg093_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg094_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg094_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg095_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg095_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg096_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg096_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg100_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg100_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg101_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg101_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg102_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg102_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg103_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg103_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg104_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg104_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg105_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg105_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg106_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg106_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg107_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg107_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg108_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg108_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg109_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg109_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg110_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg110_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg111_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg111_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg112_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg112_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg113_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg113_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg114_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg114_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg115_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg115_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg116_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg116_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg117_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg117_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg118_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg118_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg119_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg119_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg120_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg120_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg121_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg121_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg122_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg122_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg123_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg123_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg124_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg124_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg125_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg125_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg126_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg126_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg127_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg127_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg128_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg128_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg129_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg129_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg130_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg130_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg131_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg131_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg132_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg132_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg133_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg133_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg134_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg134_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg135_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg135_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg136_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg136_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg137_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg137_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg138_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg138_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg139_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg139_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg140_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg140_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg141_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg141_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg142_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg142_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg143_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg143_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg144_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg144_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg145_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg145_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg146_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg146_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg147_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg147_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg148_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg148_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg149_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg149_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg150_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg150_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg151_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg151_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg152_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg152_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg153_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg153_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg154_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg154_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg155_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg155_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg156_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg156_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg157_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg157_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg158_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg158_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg159_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg159_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg160_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg160_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg161_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg161_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg162_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg162_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg163_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg163_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg164_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg164_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg165_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg165_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg166_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg166_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg167_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg167_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg168_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg168_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg169_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg169_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg170_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg170_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg171_Read" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="0">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="valueAndStatus"
+  		dataType="OpcUa_Int32" name="Reg171_Write" nullPolicy="nullForbidden"
+  		addressSpaceWrite="regular" initialStatus="OpcUa_Good"
+  		initialValue="1073741823">
+  	</d:cachevariable>
+  </d:class>
+  <d:class name="FibreA">
+  	<d:devicelogic></d:devicelogic>
+  	<d:hasobjects instantiateUsing="configuration" class="Bus"></d:hasobjects>
+  </d:class>
+  <d:class name="Bus">
+  	<d:devicelogic></d:devicelogic>
+  	<d:hasobjects instantiateUsing="configuration" class="AMAC"></d:hasobjects>
+  	<d:cachevariable initializeWith="configuration"
+  		dataType="UaString" name="Path" nullPolicy="nullForbidden"
+  		addressSpaceWrite="forbidden" initialStatus="OpcUa_Good"
+  		initialValue="na">
+  	</d:cachevariable>
+  	<d:cachevariable initializeWith="configuration"
+  		dataType="OpcUa_Float" name="RefreshPeriod_msec"
+  		nullPolicy="nullForbidden" addressSpaceWrite="regular"
+  		initialStatus="OpcUa_Good" initialValue="5000">
+  	</d:cachevariable>
+  	<d:configentry dataType="OpcUa_Int16" name="BusIdentifier"
+  		storedInDeviceObject="true">
+  	</d:configentry>
+  </d:class>
+  <d:root>
+  	<d:hasobjects instantiateUsing="configuration" class="FibreA"></d:hasobjects></d:root>
+</d:design>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://cern.ch/quasar/Configuration" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://cern.ch/quasar/Configuration ../Configuration/Configuration.xsd ">
+	
+	<FibreA name="fibreA">
+		<Bus name="bus0" RefreshPeriod_msec="5000" BusIdentifier="1"
+			Path="/home/stave_test/starstave/itsdaq-sw/bin/endeavourTest --ip 192.168.222.16 --channel">
+			<AMAC name="amac00"></AMAC>
+			
+			<AMAC name="amac01"></AMAC>
+			
+			<AMAC name="amac02"></AMAC>
+			<AMAC name="amac03"></AMAC>
+			<AMAC name="amac04"></AMAC>
+			<AMAC name="amac05"></AMAC>
+			<AMAC name="amac06"></AMAC>
+			<AMAC name="amac07"></AMAC>
+			<AMAC name="amac08"></AMAC>
+			<AMAC name="amac09"></AMAC>
+			<AMAC name="amac10"></AMAC>
+			<AMAC name="amac11"></AMAC>
+			<AMAC name="amac12"></AMAC>
+			<AMAC name="amac13"></AMAC> 
+			<!-- -->
+		</Bus>
+	</FibreA>
+
+</configuration>

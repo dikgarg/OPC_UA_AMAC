@@ -1,0 +1,128 @@
+/* © Copyright CERN, Universidad de Oviedo, 2015.  All rights not expressly granted are reserved.
+ * QuasarServer.cpp
+ *
+ *  Created on: Nov 6, 2015
+ * 		Author: Damian Abalo Miron <damian.abalo@cern.ch>
+ *      Author: Piotr Nikiel <piotr@nikiel.info>
+ *
+ *  This file is part of Quasar.
+ *
+ *  Quasar is free software: you can redistribute it and/or modify
+ *  it under the terms of the GNU Lesser General Public Licence as published by
+ *  the Free Software Foundation, either version 3 of the Licence.
+ *
+ *  Quasar is distributed in the hope that it will be useful,
+ *  but WITHOUT ANY WARRANTY; without even the implied warranty of
+ *  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ *  GNU Lesser General Public Licence for more details.
+ *
+ *  You should have received a copy of the GNU Lesser General Public License
+ *  along with Quasar.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+
+#include <thread>
+
+#include "QuasarServer.h"
+#include <LogIt.h>
+#include <shutdown.h>
+#include <DRoot.h>
+#include <DAMAC.h>
+
+//#include </home/grosin/Desktop/itsdaq-sw/stlib/amac2.h>
+
+QuasarServer::QuasarServer() : BaseQuasarServer()
+{
+  
+}
+
+QuasarServer::~QuasarServer()
+{
+  
+}
+
+void QuasarServer::mainLoop()
+{
+  /**********For command line**********************/    
+  
+  FILE *pipein_fp, *pipeout_fp;
+  char readbuf[80];
+  
+  char setid[] = "/home/grosin/Desktop/itsdaq-sw/bin/endeavourTest --ip 192.168.222.16 setid_bond 2 12";
+  char write[] = "/home/grosin/Desktop/itsdaq-sw/bin/endeavourTest --ip 192.168.222.16 write 2 12";
+  char read[] = "/home/grosin/Desktop/itsdaq-sw/bin/endeavourTest --ip 192.168.222.16 read 2 12";
+
+  // /* Create one way pipe line with call to popen() */
+  // if (( pipein_fp = popen(setid, "w")) == NULL)
+  //   {
+  //     perror("popen");
+  //     exit(1);
+  //   }
+  
+  // /* Create one way pipe line with call to popen() */
+  // if (( pipeout_fp = popen("sort", "w")) == NULL)
+  //   {
+  //     perror("popen");
+  //     exit(1);
+  //   }
+  
+  // /* Processing loop */
+  // while(fgets(readbuf, 80, pipein_fp))
+  //   {puts(readbuf);}
+  // //fputs(readbuf, pipeout_fp);
+  
+  // /* Close the pipes */
+  // pclose(pipein_fp);
+  // pclose(pipeout_fp);
+  
+  printServerMsg("Press "+std::string(SHUTDOWN_SEQUENCE)+" to shutdown server");
+  
+  // Wait for user command to terminate the server thread.
+  
+  //void read_cmd, write_cmd;
+  bool read_cmd, write_cmd;
+
+  while(ShutDownFlag() == 0)
+    {
+      std::this_thread::sleep_for(std::chrono::milliseconds(100));
+      
+      for (Device::DAMAC * amac : Device::DRoot::getInstance()->amacs())
+      	{
+      	  read_cmd = amac->read_command();
+	  write_cmd = amac->write_command();
+
+	  //std::cout<<read_cmd<<"\n";
+      	  // std::cout<<amac->read_command()<<std::endl;
+
+	  if(write_cmd==1) { pipein_fp = popen(write, "w"); };
+      	  //amac->write_command();
+      	}
+      
+    }
+  
+  if(read_cmd==0) { std::cout<<"\n\n\n\***********HI ************ \n\n\n"; pipein_fp = popen(read, "w"); }
+  
+  /* Close the pipes */
+  pclose(pipein_fp);
+  pclose(pipeout_fp);
+  
+  printServerMsg(" Shutting down server");
+  
+}
+
+void QuasarServer::initialize()
+{
+  LOG(Log::INF) << "Initializing Quasar server.";
+  
+}
+
+void QuasarServer::shutdown()
+{
+  LOG(Log::INF) << "Shutting down Quasar server.";
+}
+
+void QuasarServer::initializeLogIt()
+{
+  BaseQuasarServer::initializeLogIt();
+  LOG(Log::INF) << "Logging initialized.";
+}
