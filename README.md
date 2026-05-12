@@ -1,16 +1,16 @@
 # OPC_UA_AMAC
 
-An OPC-UA server for interfacing with the **AMACv2** chip on ATLAS Inner Tracker (ITk) silicon strip detector modules. Built on the [QUASAR](https://github.com/quasar-team/quasar) framework (CERN), it exposes AMACv2 hardware registers and measurements to OPC-UA clients such as WinCC-OA.
+An OPC-UA server for interfacing with the **AMACv2** chip on the ATLAS Inner Tracker (ITk) silicon strip detector modules. Built on the [QUASAR](https://github.com/quasar-team/quasar) framework (CERN), it creates an interface to communicate with the AMACv2 hardware registers and let's it control the detector and make measurements via OPC-UA clients such as WinCC-OA.
 
 Developed as part of the ATLAS High Luminosity LHC (HL-LHC) upgrade detector instrumentation effort.
 
-> **Note:** Full operation requires a proprietary ATLAS software layer (`ITSDAQCommandline` / `endeavourTest`) that converts optical signals from the AMACv2 chip into usable digital data. A dummy backend is included for testing without hardware.
+> **Note:** Full operation requires a proprietary ATLAS software layer (`ITSDAQCommandline` / `endeavourTest`) that converts optical signals from the AMACv2 chip into usable digital data. 
 
 ---
 
 ## Hardware Context
 
-The **AMACv2** (ATLAS Module and Assembly Controller v2) is an ASIC used to monitor and control silicon strip detector modules. It provides:
+The **AMACv2** (Autonomous Monitor and Control v2) is an ASIC used to monitor and control silicon strip detector modules. It provides:
 - 16-channel analog monitoring (temperature, voltage, current)
 - NTC thermistor-based temperature readout
 - Configurable current measurement ranges via internal shunt resistors
@@ -46,7 +46,7 @@ OPC_UA_AMAC/
 └── quasar.py            — QUASAR framework CLI
 ```
 
-Files outside `Device/` are taken from the upstream QUASAR codebase.
+Files outside `Device/` are mainly taken from the upstream QUASAR codebase.
 
 ---
 
@@ -69,7 +69,7 @@ The core device class. Implements register-level communication with the AMACv2 c
 |--------|-------------|
 | `readReg(reg)` | Read a 32-bit value from an AMACv2 register |
 | `writeReg(reg, val)` | Write a value to an AMACv2 register |
-| `AMACv2_readAM()` | Read all 16 analog monitoring channels (registers 10–15), extracting 10-bit ADC fields with MUX configuration |
+| `AMACv2_readAM()` | Read all 16 analog monitoring channels (registers 10-15), extracting 10-bit ADC fields with MUX configuration |
 | `AMACv2_readAM_calibrated()` | Apply per-channel calibration factors to raw ADC readings |
 | `AMACv2_zeroOffset()` | Establish ADC offset baselines by toggling hardware zero-cal mode |
 | `AMACv2_readNTC()` | Auto-ranging NTC thermistor temperature readout using the Steinhart-Hart equation |
