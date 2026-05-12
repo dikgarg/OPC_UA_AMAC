@@ -155,5 +155,5 @@ Framework code (QUASAR, LogIt) is distributed under the **GNU Lesser General Pub
 ## Related
 
 - [QUASAR framework](https://github.com/quasar-team/quasar)
-- [AMACv2 chip documentation](https://atlas-project-amac.web.cern.ch/) (CERN internal)
-- ATLAS ITk Strip Detector — HL-LHC upgrade documentation
+- [AMACv2 chip documentation](https://doi.org/10.25820/etd.006883)
+- [ATLAS ITk Strip Detector — HL-LHC upgrade documentation] (https://cds.cern.ch/record/2257755)
